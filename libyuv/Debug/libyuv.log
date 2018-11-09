@@ -1,0 +1,53 @@
+﻿  video_common.cc
+  scale_win.cc
+  scale_neon64.cc
+  scale_neon.cc
+  scale_mips.cc
+  scale_gcc.cc
+  scale_common.cc
+  scale_argb.cc
+  scale_any.cc
+  scale.cc
+  row_win.cc
+  row_neon64.cc
+  row_neon.cc
+  row_mips.cc
+  row_gcc.cc
+  row_common.cc
+  row_any.cc
+  rotate_win.cc
+  rotate_neon64.cc
+  rotate_neon.cc
+  正在生成代码...
+  正在编译...
+  rotate_mips.cc
+  rotate_gcc.cc
+  rotate_common.cc
+  rotate_argb.cc
+  rotate_any.cc
+  rotate.cc
+  planar_functions.cc
+  mjpeg_validate.cc
+  mjpeg_decoder.cc
+  cpu_id.cc
+  convert_to_i420.cc
+  convert_to_argb.cc
+  convert_jpeg.cc
+  convert_from_argb.cc
+  convert_from.cc
+  convert_argb.cc
+  convert.cc
+  compare_win.cc
+  compare_neon64.cc
+  compare_neon.cc
+  正在生成代码...
+  正在编译...
+  compare_gcc.cc
+  compare_common.cc
+  compare.cc
+  正在生成代码...
+    正在创建库 Debug\libyuv.lib 和对象 Debug\libyuv.exp
+  libyuv.vcxproj -> G:\Dev\FFmpeg\ISDL\libyuv\Debug\libyuv.dll
+  libyuv.vcxproj -> Debug\libyuv.pdb (Full PDB)
+  复制了 1 个文件
+  复制了 1 个文件

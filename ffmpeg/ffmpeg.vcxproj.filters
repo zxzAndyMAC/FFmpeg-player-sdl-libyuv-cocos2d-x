@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{a8774e54-1f6b-4a3c-ae95-460ead5180d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{c91343a2-78f5-49ff-b098-45c02d9daa9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\function.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PacketQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FrameQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IFFmpeg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\structs.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PacketQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaState.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FrameQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IFFmpeg.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

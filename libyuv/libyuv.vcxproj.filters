@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{7ec169e9-5fa5-4f34-af86-55d1d31c1a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{6042e50c-ec26-4601-a50b-12e50e99374c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\libyuv">
+      <UniqueIdentifier>{fcb1a4cd-58a3-4905-983b-d92cc900b732}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\libyuv.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\basic_types.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\compare.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\compare_row.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\convert.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\convert_argb.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\convert_from.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\convert_from_argb.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\cpu_id.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\mjpeg_decoder.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\planar_functions.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\rotate.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\rotate_argb.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\rotate_row.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\row.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\scale.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\scale_argb.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\scale_row.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\version.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libyuv\video_common.h">
+      <Filter>include\libyuv</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\compare.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\compare_common.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\compare_gcc.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\compare_neon.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\compare_neon64.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\compare_win.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\convert.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\convert_argb.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\convert_from.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\convert_from_argb.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\convert_jpeg.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\convert_to_argb.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\convert_to_i420.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\cpu_id.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mjpeg_decoder.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mjpeg_validate.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\planar_functions.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate_any.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate_argb.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate_common.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate_gcc.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate_mips.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate_neon.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate_neon64.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rotate_win.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\row_any.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\row_common.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\row_gcc.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\row_mips.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\row_neon.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\row_neon64.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\row_win.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale_any.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale_argb.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale_common.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale_gcc.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale_mips.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale_neon.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale_neon64.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scale_win.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\video_common.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
