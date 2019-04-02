@@ -19,6 +19,7 @@ namespace FFMPEG {
 		int packet_queue_init(PacketQueue *q);
 		void packet_queue_flush(PacketQueue *q); //刷出包队列剩余的包
 		void packet_queue_destroy(PacketQueue *q);
+		void packet_mutex_destroy(PacketQueue *q);
 		void packet_queue_abort(PacketQueue *q);
 		void packet_queue_start(PacketQueue *q);
 		int packet_queue_get(PacketQueue *q, AVPacket *pkt, int block, int *serial);//包数据出列

@@ -3,40 +3,40 @@
 #define FFMPEG_STRUCTS_H
 
 extern "C" {
-	#include "libavutil/avstring.h"
-	#include "libavutil/eval.h"
-	#include "libavutil/mathematics.h"
-	#include "libavutil/pixdesc.h"
-	#include "libavutil/imgutils.h"
-	#include "libavutil/parseutils.h"
-	#include "libavutil/samplefmt.h"
-	#include "libavutil/avassert.h"
-	#include "libavutil/time.h"
-	#include "libavformat/avformat.h"
-	#include "libavdevice/avdevice.h"
-	#include "libswscale/swscale.h"
-	#include "libavcodec/avfft.h"
-	#include "libswresample/swresample.h"
-}
+
+#include "libavutil/avstring.h"
+#include "libavutil/eval.h"
+#include "libavutil/mathematics.h"
+#include "libavutil/pixdesc.h"
+#include "libavutil/imgutils.h"
+#include "libavutil/parseutils.h"
+#include "libavutil/samplefmt.h"
+#include "libavutil/avassert.h"
+#include "libavutil/time.h"
+#include "libavformat/avformat.h"
+#include "libavdevice/avdevice.h"
+#include "libswscale/swscale.h"
+#include "libavcodec/avfft.h"
+#include "libswresample/swresample.h"
+
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_thread.h>
 
-#include <assert.h>
-
-namespace FFMPEG {
 
 #define FF_QUIT_EVENT    (SDL_USEREVENT + 2)
 #define FF_PAUSE_EVENT    (SDL_USEREVENT + 1000)
 #define FF_MUTE_EVENT    (SDL_USEREVENT + 2000)
 #define FF_OVER_EVENT    (SDL_USEREVENT + 3000)
 #define FF_SEEK_EVENT    (SDL_USEREVENT + 4000)
+#define FF_PLAY_EVENT    (SDL_USEREVENT + 5000)
 
 #define FF_QUIT_EVENT_ID(id) FF_QUIT_EVENT+id
 #define FF_PAUSE_EVENT_ID(id) FF_PAUSE_EVENT+id
 #define FF_MUTE_EVENT_ID(id) FF_MUTE_EVENT+id
 #define FF_OVER_EVENT_ID(id) FF_OVER_EVENT+id
 #define FF_SEEK_EVENT_ID(id) FF_SEEK_EVENT+id
+#define FF_PLAY_EVENT_ID(id) FF_PLAY_EVENT+id
 
 #define MAX_QUEUE_SIZE (15 * 1024 * 1024)
 #define MIN_FRAMES 25
@@ -172,7 +172,7 @@ namespace FFMPEG {
 		int pkt_serial;// 包序列
 		int finished;// 是否已经结束
 		int packet_pending;// 是否有包在等待
-		SDL_cond *empty_queue_cond;// 空队列条件变量
+		
 		int64_t start_pts;// 开始的时间戳
 		AVRational start_pts_tb;// 开始的额外参数
 		int64_t next_pts;// 下一帧时间戳
@@ -182,7 +182,6 @@ namespace FFMPEG {
 
 	// 视频状态结构
 	typedef struct VideoState {
-		SDL_Thread *read_tid; // 读取线程
 		AVInputFormat *iformat;// 输入格式
 		int abort_request;// 请求取消
 		int force_refresh;// 强制刷新
@@ -233,35 +232,24 @@ namespace FFMPEG {
 		struct AudioParams audio_src; // 音频参数
 		struct AudioParams audio_tgt;
 		struct SwrContext *swr_ctx;// 音频转码上下文
-		int frame_drops_early;
-		int frame_drops_late;
 
 		enum ShowMode {//显示类型
-			SHOW_MODE_NONE = -1, 
+			SHOW_MODE_NONE = -1,
 			SHOW_MODE_VIDEO = 0,  // 显示视频
 			SHOW_MODE_WAVES,  // 显示波浪，音频
 			SHOW_MODE_RDFT, // 自适应滤波器
 			SHOW_MODE_NB
 		} show_mode;
-		int16_t sample_array[SAMPLE_ARRAY_SIZE];// 采样数组
-		int sample_array_index;// 采样索引
-		int last_i_start;// 上一开始
 		RDFTContext *rdft;// 自适应滤波器上下文
 		int rdft_bits;// 自使用比特率
 		FFTSample *rdft_data; // 快速傅里叶采样
-		int xpos;
 		double last_vis_time;
-
-//不使用SDL_Texture
-// 		SDL_Texture *sub_texture;
-// 		SDL_Texture *vid_texture;
 
 		int subtitle_stream;// 字幕码流Id
 		AVStream *subtitle_st;// 字幕码流
 		PacketQueue subtitleq;// 字幕包队列
 
 		double frame_timer;// 帧计时器
-		double frame_last_returned_time;// 上一次返回时间
 		double frame_last_filter_delay;// 上一个过滤器延时
 		int video_stream; // 视频码流Id
 		AVStream *video_st;// 视频码流
@@ -273,16 +261,11 @@ namespace FFMPEG {
 
 		char *filename;// 文件名
 		char *filebuffer;
-		unsigned int filebuffersize;
-		int width, height, xleft, ytop; // 宽高，其实坐标
+		int64_t filebuffersize;
+		int64_t filesize;
+		int64_t filepos;
 		int step;// 步进
-
-		int last_video_stream, last_audio_stream, last_subtitle_stream; // 上一个视频码流Id、上一个音频码流Id、上一个字幕码流Id
-
-		SDL_cond *continue_read_thread;// 连续读线程
 	} VideoState;
 
-	void print_error(const char *filename, int err);
 }
-
 #endif

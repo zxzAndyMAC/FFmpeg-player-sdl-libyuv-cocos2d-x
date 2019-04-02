@@ -1,6 +1,0 @@
-﻿  复制了 11 个文件
-  复制了 9 个文件
-  SDLTest.cpp
-g:\dev\ffmpeg\isdl\sdltest\sdltest.cpp(66): warning C4244: “初始化”: 从“__int64”转换到“double”，可能丢失数据
-  SDLTest.vcxproj -> G:\Dev\FFmpeg\ISDL\Debug\SDLTest.exe
-  SDLTest.vcxproj -> G:\Dev\FFmpeg\ISDL\Debug\SDLTest.pdb (Full PDB)

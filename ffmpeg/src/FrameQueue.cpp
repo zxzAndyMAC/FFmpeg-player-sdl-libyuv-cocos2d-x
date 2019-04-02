@@ -11,10 +11,11 @@ namespace FFMPEG {
 	CFrameQueue::~CFrameQueue()
 	{}
 
-	void CFrameQueue::frame_queue_unref_item(Frame *vp)
+	void CFrameQueue::frame_queue_unref_item(Frame *vp, bool sub)
 	{
 		av_frame_unref(vp->frame);
-		avsubtitle_free(&vp->sub);
+		if(sub)
+			avsubtitle_free(&vp->sub);
 	}
 
 	int CFrameQueue::frame_queue_init(FrameQueue *f, PacketQueue *pktq, int max_size, int keep_last)
@@ -38,7 +39,7 @@ namespace FFMPEG {
 		return 0;
 	}
 
-	void CFrameQueue::frame_queue_destory(FrameQueue *f)
+	void CFrameQueue::frame_queue_destory(FrameQueue *f, bool sub)
 	{
 		int i;
 		for (i = 0; i < f->max_size; i++) {
@@ -46,6 +47,10 @@ namespace FFMPEG {
 			frame_queue_unref_item(vp);
 			av_frame_free(&vp->frame);
 		}
+	}
+
+	void CFrameQueue::frame_mutex_destory(FrameQueue *f)
+	{
 		SDL_DestroyMutex(f->mutex);
 		SDL_DestroyCond(f->cond);
 	}
@@ -72,16 +77,13 @@ namespace FFMPEG {
 		return &f->queue[f->rindex];
 	}
 
+	bool CFrameQueue::frame_queue_writable(FrameQueue *f)
+	{
+		return f->size >= f->max_size && !f->pktq->abort_request;
+	}
+
 	Frame *CFrameQueue::frame_queue_peek_writable(FrameQueue *f)
 	{
-		/* wait until we have space to put a new frame */
-		SDL_LockMutex(f->mutex);
-		while (f->size >= f->max_size &&
-			!f->pktq->abort_request) {
-			SDL_CondWait(f->cond, f->mutex);
-		}
-		SDL_UnlockMutex(f->mutex);
-
 		if (f->pktq->abort_request)
 			return NULL;
 

@@ -1,8 +1,0 @@
-﻿  复制了 1 个文件
-  复制了 1 个文件
-  IFFmpeg.cpp
-g:\dev\ffmpeg\isdl\ffmpeg\src\libavutil\rational.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  ffmpeg.vcxproj -> G:\Dev\FFmpeg\ISDL\ffmpeg\Debug\ffmpeg.dll
-  ffmpeg.vcxproj -> Debug\ffmpeg.pdb (Full PDB)
-  复制了 1 个文件
-  复制了 1 个文件
